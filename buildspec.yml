@@ -7,16 +7,19 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm ci --legacy-peer-deps
+
   build:
     commands:
       - echo Build started on `date`
       - echo Building the application...
       - npm run build
-  artifacts:
+    
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      
+artifacts:
     files:
       - '**/*'
     base-directory: dist
     discard-paths: no
-  post_build:
-    commands:
-      - echo Build completed on `date`
