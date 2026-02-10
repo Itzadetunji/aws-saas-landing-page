@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 22
     commands:
       - echo Installing source NPM dependencies...
       - npm ci --legacy-peer-deps
@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      
+
 artifacts:
     files:
       - '**/*'
